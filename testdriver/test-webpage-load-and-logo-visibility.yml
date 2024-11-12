@@ -1,0 +1,16 @@
+version: 4.1.15
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Assert that the webpage loads successfully.
+    commands:
+      - command: assert
+        expect: Design-minded. Agile-run. Results-oriented.
+  - prompt: >-
+      Assert that the logo is visible.  # Use the content of the file from the
+      environment
+    commands:
+      - command: assert
+        expect: the logo is visible
