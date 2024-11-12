@@ -1,0 +1,28 @@
+version: 4.1.15
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the "development" link.
+    commands:
+      - command: hover-text
+        text: development
+        description: link in the header
+        action: click
+  - prompt: Assert that the development page loads successfully.
+    commands:
+      - command: assert
+        expect: Thoughtful digital products
+  - prompt: Click on the "culture" link.
+    commands:
+      - command: hover-text
+        text: culture
+        description: link in the header
+        action: click
+  - prompt: >-
+      Assert that the culture page loads successfully.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: the culture page contains "our culture"
